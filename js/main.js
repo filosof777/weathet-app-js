@@ -24,6 +24,7 @@ function getWeatherDate() {
     .then(data => {
       // console.log(data);
       showWeatherData(data);
+      let elWeatherCurrently = document.querySelector('.weather-day__currently').textContent = 'currently'
       let elCountry = document.querySelector('.weather-day__city').textContent = data.timezone.split("/", 2)[1];
       let temp = data.current.temp;
       let elTemp = document.querySelector('.weather-day__temp').innerHTML = `${temp = Math.round(temp)}<sup>°</sup><sup>c</sup>`
